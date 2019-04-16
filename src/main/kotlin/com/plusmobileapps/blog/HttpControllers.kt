@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController
 class ArticleController(private val repository: ArticleRepository) {
 
     @GetMapping("/")
-    fun findAll() = repository.findAllByOrderByAddedAtDesc()
+    fun findAll(): Iterable<Article> = repository.findAllByOrderByAddedAtDesc()
 
     @GetMapping("/{slug}")
     fun findOne(@PathVariable slug: String) =
