@@ -6,6 +6,11 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'kotlin-allopen'
+
+allOpen {
+    annotation("javax.persistence.Entity")
+}
 
 group = 'com.plusmobileapps'
 version = '0.0.1-SNAPSHOT'
